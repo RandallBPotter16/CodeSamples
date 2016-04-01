@@ -1,0 +1,129 @@
+@mixin linearVerticalGradient($topColor, $bottomColor, $important: "") {
+  background-image: -moz-linear-gradient(center top, $topColor 0, $bottomColor 100%) #{$important};
+  background: $bottomColor;
+  /* Old browsers */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $topColor), color-stop(100%, $bottomColor)) #{$important};
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $topColor 0, $bottomColor 100%) #{$important};
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $topColor 0, $bottomColor 100%) #{$important};
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, $topColor 0, $bottomColor 100%) #{$important};
+}
+
+@mixin elementBackgroundImage($fileInfo, $repeat:"", $x:"", $y:"", $scroll:"", $transparent: "", $important:"") {
+	background: url("#{$imagePathFromCSSFolder}#{nth($fileInfo, 1)}") #{$repeat} #{$x} #{$y} #{$scroll} #{$transparent} #{$important};
+	@if length($fileInfo) > 1 {
+		@if nth($fileInfo, 2) != "" { width: nth($fileInfo, 2); }
+		@if nth($fileInfo, 3) != "" { height: nth($fileInfo, 3); }
+	}
+}
+
+@mixin triangle($color, $type, $size, $distance) {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $type == 'top' {
+    top: 0;
+    border-width: 0 $distance $size $distance;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $type == 'top-right' {
+    top: 0;
+    right: 0;
+    border-width: 0 $size $size 0;
+    border-color: transparent $color transparent transparent;
+  }
+
+  @if $type == 'right' {
+    right: 0;
+    border-width: $distance 0 $distance $size;
+    border-color: transparent transparent transparent $color;
+  }
+
+  @if $type == 'bottom-right' {
+    bottom: 0;
+    right: 0;
+    border-width: 0 0 $size $size;
+    border-color: transparent transparent $color transparent;
+  }
+
+  @if $type == 'bottom' {
+    bottom: 0;
+    border-width: $size $distance 0 $distance;
+    border-color: $color transparent transparent transparent;
+  }
+  @if $type == 'bottom-left' {
+    bottom: 0;
+    left: 0;
+    border-width: $size 0 0 $size;
+    border-color: transparent transparent transparent $color;
+  }
+
+  @if $type == 'left' {
+    left: 0;
+    border-width: $distance $size $distance 0;
+    border-color: transparent $color transparent transparent;
+  }
+
+  @if $type == 'top-left' {
+    top: 0;
+    left: 0;
+    border-width: $size $size 0 0;
+    border-color: $color transparent transparent transparent;
+  }
+
+}
+
+@mixin boxShadow($horizontal:"", $both:"", $vertical:"", $blurRadius:"", $spread:"", $hexCode:"", $hexColor:"", $inset:"", $none:"", $r:"", $g:"", $b:"", $alpha:"", $important:"") {
+	@if $none == "" {
+		$distance: "";
+		@if($both != "") {
+			$distance: $both;
+		} @else {
+			$distance: $horizontal + " " + $vertical;
+		}
+
+		@if $hexColor != "" {
+			-webkit-box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} #{$hexColor} #{$important};
+			-moz-box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} #{$hexColor} #{$important};
+			box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} #{$hexColor} #{$important};
+		} @else {
+			-webkit-box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} rgba($r, $g, $b, $alpha) #{$important};
+			-moz-box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} rgba($r, $g, $b, $alpha) #{$important};
+			@if $alpha != "" {
+				box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} rgba($r, $g, $b, $alpha) #{$important};
+			} @else {
+				box-shadow: #{$inset} #{$distance} #{$blurRadius} #{$spread} rgb($r, $g, $b) #{$important};
+			}
+		}
+	} @else {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+@mixin rotate($degree) {
+	-moz-transform: scale(1,1) rotate($degree) translateX(0) translateY(0) skewX(0deg) skewY(0deg);
+	-webkit-transform: scale(1,1) rotate($degree) translateX(0) translateY(0) skewX(0deg) skewY(0deg);
+	-o-transform: scale(1,1) rotate($degree) translateX(0) translateY(0) skewX(0deg) skewY(0deg);
+	-ms-transform: scale(1,1) rotate($degree) translateX(0) translateY(0) skewX(0deg) skewY(0deg);
+	transform: scale(1,1) rotate($degree) translateX(0) translateY(0) skewX(0deg) skewY(0deg);
+}
+
+@mixin textShadow($horizontal:"",$vertical:"",$blur:"",$hexColor:"", $none:"", $r:"", $g:"", $b:"", $alpha:"", $important:"") {
+
+	@if $none == "" {
+		@if $hexColor != "" {
+			text-shadow: $horizontal $vertical $blur $hexColor #{$important};
+			filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$horizontal} OffY=#{$vertical}, Color='#{$hexColor}') #{$important} ;
+		} 
+	} @else {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+}

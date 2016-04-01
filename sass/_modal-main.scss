@@ -1,0 +1,147 @@
+// Modals
+// ----------------------------------
+.modal-content {
+  background: $tertiaryColor1;
+  h2 {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+  a {
+    color: $colorWhite1;
+    &:hover {
+      color: $titlebar-color;
+    }
+  }
+  .modal-title {
+    padding: 15px 20px;
+    background: $modal-title-bg-color;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 0;
+
+    h2 {
+      color: $modal-title-text-color;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      line-height: 28px;
+      > a {
+        color: $colorWhite1;
+        padding-right: 30px;
+        background: url("#{$sprite-path}") 100% -154px no-repeat;
+        float: left;
+        font-size: 24px;
+        &:hover {
+          background-position: 100% -177px;
+        }
+      }
+      > span {
+        color: $tertiaryColor8;
+        float: left;
+      }
+    }
+    form#new-post-form {
+      > div, > fieldset {
+        background: none;
+      }
+    }
+  }
+  .modal-messages {
+    background: $negative2;
+    position: absolute;
+    top: 58px;
+    z-index: 3;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    padding-left: 63px;
+    margin: 0;
+    box-sizing: border-box;
+    >li {
+      float: left;
+      color: white;
+      font-weight: 600;
+      margin-right: 30px;
+      line-height: 31px;
+      list-style: decimal;
+      margin-left: 20px;
+    }
+    .close {
+      position: absolute;
+      top: 6px;
+      right: 19px;
+      padding: 5px;
+      line-height: 6px;
+      background-color: red;
+    }
+  }
+  .modal-arrow {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 100px;
+    background: $modal-title-arrow;
+    height: 17px;
+    z-index: 999;
+  }
+  .modal-scroll {
+    height: 350px;
+    overflow: auto;
+    overflow-y: scroll;
+  }
+  .modal-body {
+    max-height: 345px;
+    position: relative;
+    z-index: 2;
+    padding: 20px 20px 0;
+    clear: both;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: $tertiaryColor8;
+    h2 {
+      font-size: 20px;
+    }
+    &.modal-scroll {
+      padding: 0 0 0 20px;
+      height: auto;
+      overflow: auto;
+    }
+
+    .modal-pane {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    .modal-inline-messages {
+      margin: 0 20px 20px;
+      padding: 20px;
+      background: $tertiaryColor2;
+      position: relative;
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
+      .button.close {
+        position: absolute;
+        top: 18px;
+        right: 15px;
+        font-size: 16px;
+        padding: 6px 8px;
+        background: $tertiaryColor10;
+      }
+    }
+  }
+  .modal-footer {
+    background: $tertiaryColor1;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 20px 0 20px 0;
+    clear: both;
+    text-align: center;
+    p {
+      margin-bottom: 10px;
+    }
+    a {
+      color: white;
+    }
+  }
+}

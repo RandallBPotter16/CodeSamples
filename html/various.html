@@ -1,0 +1,86 @@
+<div class="modal_contain">
+	<h2>Trouble Ticket</h2>
+	<div class="modal trouble_ticket">
+		<h3>Trouble Ticket</h3>	
+		<a href="#" class="modal_close"><img class="small-icon" src="images/ui/modal_close.min.svg" alt="Modal Close"></a>
+		<div class="modal_content">
+			<form class="light">
+				<fieldset class="form_structure border_top">
+					<div class="row">
+						<div class="cell two_column">
+							<label for="agent_reporting">Agent Reporting Trouble</label>
+							<select id="agent_reporting" class="dropdown" data-settings='{"cutOff":6}'>
+								<option value="1">Matthew Williams</option>
+								<option value="2">Option 1</option>
+								<option value="3">Option 2</option>
+							</select>
+						</div>
+						<div class="cell two_column">
+							<label for="trouble_category">Trouble Category</label>
+							<select id="trouble_category" class="dropdown" data-settings='{"cutOff":6}'>
+								<option value="" class="label">Select Category</option>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="cell three_column">
+							<label for="trouble_call_id">Call ID</label>
+							<input type="text" id="trouble_call_id" value="00125364">
+						</div>
+						<div class="cell three_column">
+							<label for="trouble_direction">Call Direction</label>
+							<input type="text" id="trouble_direction" placeholder="Sample Direction">
+						</div>
+						<div class="cell three_column">
+							<label for="trouble_station_name">Station Name</label>
+							<input type="text" id="trouble_station_name" placeholder="Sample Name">
+						</div>
+					</div>
+					<div class="row">
+						<div class="cell three_column">
+							<label for="trouble_line_name">Line Name</label>
+							<input type="text" id="trouble_line_name" placeholder="Sample Line Name">
+						</div>
+						<div class="cell three_column">
+							<label for="trouble_contact_id">Contact ID</label>
+							<input type="text" id="trouble_contact_id" placeholder="00000000">
+						</div>
+						<div class="cell three_column">
+							<label for="trouble_workgroup">Workgroup</label>
+							<input type="text" id="trouble_workgroup" placeholder="00000000">
+						</div>
+					</div>
+					<div class="row">
+						<div class="cell one_column">
+							<label for="trouble_description">Description of Problem</label>
+							<textarea rows="5" id="trouble_description" placeholder="Enter description here"></textarea>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<div class="popup_actions centered">
+				<a href="#" class="btn save_btn">Save &amp; Close</a>
+			</div>
+			<div class="help_direction">
+				<p>Please click just once</p>
+			</div>
+		</div>					
+	</div>	
+</div>
+
+<div class="scripting_block disclosure">
+	<div class="disclosure_content">
+		<p>Semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+		<p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+	</div>
+	<div class="disclosure_confirm">
+		<form class="light no_top">
+			<input type="checkbox" id="diclosure_confirm">
+			<label class="radio_checkbox" for="diclosure_confirm"><span class="text-red bold">I have read this disclosure.</span></label>
+		</form>
+	</div>
+</div>
+					
+					

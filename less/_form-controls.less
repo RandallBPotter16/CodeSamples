@@ -1,0 +1,93 @@
+input[type="range"] {
+  margin: 5px 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+  -webkit-appearance: none;
+
+    &.flat {
+
+      + label {
+        background-color: darken(@gray-lighter, 10%);
+
+        &:before,
+        &:after {
+          display: block;
+          position: absolute;
+          content: "";
+        }
+
+        &:before {
+          top: 2px;
+          left: 2px;
+          bottom: 2px;
+          right: 2px;
+          background-color: #fff;
+          .border-radius(@width / 2);
+          .transition(background 0.4s);
+        }
+
+        &:after {
+          top: 4px;
+          left: 4px;
+          bottom: 4px;
+          width: (@width / 2) - 8;
+          background-color: darken(@gray-lighter, 10%);
+          .border-radius( (@width / 2) - 8 );
+          .transition(all 0.4s);
+        }
+
+      }
+
+      &:checked + label {
+        background-color: @gray-light;
+
+        &:after {
+          margin-left: (@width - 20) / 2;
+          background-color: @gray-light;
+        }
+
+        &.default {
+          background-color: @gray-light;
+          &:after {
+            background-color: @gray-light;
+          }
+        }
+        &.primary {
+          background-color: @blue;
+          &:after {
+            background-color: @blue;
+          }
+        }
+        &.success {
+          background-color: @green;
+          &:after {
+            background-color: @green;
+          }
+        }
+        &.danger {
+          background-color: @red;
+          &:after {
+            background-color: @red;
+          }
+        }
+        &.warning {
+          background-color: @orange;
+          &:after {
+            background-color: @orange;
+          }
+        }
+        &.info {
+          background-color: @aqua;
+          &:after {
+            background-color: @aqua;
+          }
+        }
+
+      }
+
+    }
+
+  }

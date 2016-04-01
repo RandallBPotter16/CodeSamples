@@ -1,0 +1,45 @@
+.scripting_block .order-process-container li::before {
+  content: "";
+  background: none;
+}
+.order-process-container {
+  h5 {
+    margin-bottom: 0;
+  }
+  h1 {
+    margin-top: 0;
+  }
+  .form_structure {
+    border-top: none;
+  }
+  .messages {
+    margin-bottom: 5px;
+  }
+}
+.order-process {
+  position: relative;
+  .order-process-column {
+    padding: 10px;
+  }
+  ul {
+    margin-bottom: 0;
+  }
+  select {
+      padding: 0 .35em .1em;
+      background-size: 55% 55%;
+      background-position-x: 90%;
+      background-position-y: 20%;
+  }
+  .checkboxes li, .radios li {
+    height: 20px;
+  }
+  .order-process-extras {
+    ul li {
+      text-transform: none;
+    }
+  }
+  .serviceability, .equipment, .add-ons, .installation, .features, .promos, .offers, .messages, .messages li {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
